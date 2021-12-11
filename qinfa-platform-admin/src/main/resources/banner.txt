@@ -1,0 +1,7 @@
+${AnsiColor.BRIGHT_YELLOW}${AnsiStyle.BOLD}
+ +-+-+-+-+-+ +-+-+-+-+-+
+ |C|h|i|n|a| |Q|i|n|f|a|
+ +-+-+-+-+-+ +-+-+-+-+-+
+${AnsiColor.CYAN}${AnsiStyle.BOLD}
+:: 中国秦发产运销大数据平台 ::  (v1.0.0)
+${AnsiStyle.NORMAL}

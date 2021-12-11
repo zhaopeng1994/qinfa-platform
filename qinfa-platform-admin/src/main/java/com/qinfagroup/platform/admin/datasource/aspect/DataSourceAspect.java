@@ -27,7 +27,7 @@ import java.lang.reflect.Method;
 /**
  * 多数据源，切面处理类
  *
- * @author Mark sunlightcs@gmail.com
+ *
  */
 @Aspect
 @Component
@@ -35,8 +35,8 @@ import java.lang.reflect.Method;
 public class DataSourceAspect {
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Pointcut("@annotation(io.renren.datasource.annotation.DataSource) " +
-            "|| @within(io.renren.datasource.annotation.DataSource)")
+    @Pointcut("@annotation(com.qinfagroup.platform.admin.datasource.annotation.DataSource) " +
+            "|| @within(com.qinfagroup.platform.admin.datasource.annotation.DataSource)")
     public void dataSourcePointCut() {
 
     }

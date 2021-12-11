@@ -1,10 +1,4 @@
-/**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
+
 
 package com.qinfagroup.platform.admin.config;
 
@@ -37,7 +31,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
             //加了ApiOperation注解的类，才生成接口文档
             .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
             //包下的类，才生成接口文档
-            //.apis(RequestHandlerSelectors.basePackage("io.renren.controller"))
+            //.apis(RequestHandlerSelectors.basePackage("com.qinfagroup.platform.admin.controller"))
             .paths(PathSelectors.any())
             .build()
             .securitySchemes(security());
