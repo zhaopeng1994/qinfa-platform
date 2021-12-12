@@ -17,5 +17,7 @@
         <module>qinfa-platform-transport-data</module>
         <module>qinfa-platform-station</module>
         <module>qinfa-platform-port</module>
+        <module>qinfa-platform-generator</module>
+        <module>qinfa-platform-common</module>
     </modules>
 </project>
