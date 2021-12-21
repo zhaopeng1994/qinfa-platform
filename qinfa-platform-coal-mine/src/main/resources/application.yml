@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: qinfa-platform-coal-mine
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://121.33.190.195:48366/qf_coal_mine?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: cli_users
+    password: KJDjifdf343A
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto

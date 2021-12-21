@@ -27,6 +27,7 @@
     <properties>
         <lombok.version>1.18.16</lombok.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
+        <mysql-connector-java.version>8.0.17</mysql-connector-java.version>
         <mybatis-plus-boot-starter.version>3.3.1</mybatis-plus-boot-starter.version>
         <httpcore.version>4.4.12</httpcore.version>
         <servlet-api.version>2.5</servlet-api.version>
@@ -48,6 +49,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus-boot-starter.version}</version>
@@ -67,6 +73,16 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+        <!-- 引入nacos服务发现组件 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!-- 引入nacos配置中心组件 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
     </dependencies>
 </project>

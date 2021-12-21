@@ -13,6 +13,6 @@ import java.util.Map;
  */
 public interface CoalMineTypeService extends IService<CoalMineTypeEntity> {
 
-    PageData queryPage(Map<String, Object> params);
+    PageData<CoalMineTypeEntity> queryPage(Map<String, Object> params);
 }
 

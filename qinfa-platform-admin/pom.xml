@@ -7,7 +7,7 @@
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	<name>秦发产运销大数据平台-管理服务</name>
-	<description>qinfa-platform-coal-mine</description>
+	<description>qinfa-platform-admin</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

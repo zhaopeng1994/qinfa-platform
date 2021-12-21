@@ -25,8 +25,8 @@ public class CoalMineTypeController {
      * 列表
      */
     @GetMapping("/list")
-    public ResponseData<PageData<CoalMineTypeEntity>> list(@RequestParam Map<String, Object> params){
-        PageData<CoalMineTypeEntity> page = coalMineTypeService.queryPage(params);
+    public ResponseData<PageData> list(@RequestParam Map<String, Object> params){
+        PageData page = coalMineTypeService.queryPage(params);
         return ResponseData.success(page);
     }
 
