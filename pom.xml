@@ -19,7 +19,7 @@
         <module>qinfa-platform-port</module>
         <module>qinfa-platform-generator</module>
         <module>qinfa-platform-common</module>
-        <module>qinfa-platform-gateway</module>
+        <module>qinfa-platform-api-gateway</module>
     </modules>
 
     <properties>

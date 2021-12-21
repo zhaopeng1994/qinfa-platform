@@ -8,9 +8,9 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.qinfagroup.platform.admin.common.validator.group.AddGroup;
 import com.qinfagroup.platform.admin.common.validator.group.UpdateGroup;
 import lombok.Data;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;

@@ -18,7 +18,7 @@
         <dependency>
             <groupId>com.qinfagroup</groupId>
             <artifactId>qinfa-platform-common</artifactId>
-            <version>1.0.0</version>
+            <version>${qinfa-platform-common.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -36,7 +36,7 @@
             <dependency>
                 <groupId>com.qinfagroup</groupId>
                 <artifactId>qinfa-platform</artifactId>
-                <version>1.0.0</version>
+                <version>${qinfa-platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

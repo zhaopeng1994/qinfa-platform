@@ -4,18 +4,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.qinfagroup</groupId>
-    <artifactId>qinfa-platform-gateway</artifactId>
+    <artifactId>qinfa-platform-api-gateway</artifactId>
     <version>1.0.0</version>
     <name>秦发产运销大数据平台-网关服务</name>
-    <description>qinfa-platform-gateway</description>
+    <description>qinfa-platform-api-gateway</description>
 
     <properties>
         <java.version>1.8</java.version>
         <qinfa-platform.version>1.0.0</qinfa-platform.version>
+        <qinfa-platform-common.version>1.0.0</qinfa-platform-common.version>
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.qinfagroup</groupId>
+            <artifactId>qinfa-platform-common</artifactId>
+            <version>${qinfa-platform-common.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>

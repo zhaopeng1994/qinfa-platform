@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.aspect;
 
 import com.google.gson.Gson;
@@ -25,12 +23,11 @@ import java.util.Date;
 
 /**
  * 系统日志，切面处理类
- *
- *
  */
 @Aspect
 @Component
 public class SysLogAspect {
+
 	@Autowired
 	private SysLogService sysLogService;
 	
@@ -64,7 +61,7 @@ public class SysLogAspect {
 			sysLog.setOperation(syslog.value());
 		}
 
-		//请求的方法名
+		// 请求的方法名
 		String className = joinPoint.getTarget().getClass().getName();
 		String methodName = signature.getName();
 		sysLog.setMethod(className + "." + methodName + "()");
