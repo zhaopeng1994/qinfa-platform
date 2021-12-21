@@ -25,8 +25,8 @@ public class ${className}Controller {
      * 列表
      */
     @GetMapping("/list")
-    public ResponseData<PageData> list(@RequestParam Map<String, Object> params){
-        PageData<PageData> page = ${classname}Service.queryPage(params);
+    public ResponseData<PageData<${className}Entity>> list(@RequestParam Map<String, Object> params){
+        PageData<${className}Entity> page = ${classname}Service.queryPage(params);
         return ResponseData.success(page);
     }
 

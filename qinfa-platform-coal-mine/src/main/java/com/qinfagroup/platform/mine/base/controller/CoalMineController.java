@@ -23,10 +23,11 @@ public class CoalMineController {
 
     /**
      * 列表
+     * @return
      */
     @GetMapping("/list")
-    public ResponseData<PageData> list(@RequestParam Map<String, Object> params){
-        PageData page = coalMineService.queryPage(params);
+    public ResponseData<PageData<CoalMineEntity>> list(@RequestParam Map<String, Object> params){
+        PageData<CoalMineEntity> page = coalMineService.queryPage(params);
         return ResponseData.success(page);
     }
 

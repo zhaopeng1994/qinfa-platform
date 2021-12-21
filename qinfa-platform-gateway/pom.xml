@@ -2,41 +2,47 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.qinfagroup</groupId>
-    <artifactId>qinfa-platform-coal-mine</artifactId>
+    <artifactId>qinfa-platform-gateway</artifactId>
     <version>1.0.0</version>
-    <name>秦发产运销大数据平台-煤矿服务</name>
-    <description>qinfa-platform-coal-mine</description>
+    <name>秦发产运销大数据平台-网关服务</name>
+    <description>qinfa-platform-gateway</description>
 
     <properties>
         <java.version>1.8</java.version>
         <qinfa-platform.version>1.0.0</qinfa-platform.version>
-        <qinfa-platform-common.version>1.0.0</qinfa-platform-common.version>
     </properties>
 
     <dependencies>
+
         <dependency>
-            <groupId>com.qinfagroup</groupId>
-            <artifactId>qinfa-platform-common</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.qinfagroup</groupId>
                 <artifactId>qinfa-platform</artifactId>
-                <version>1.0.0</version>
+                <version>${qinfa-platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
