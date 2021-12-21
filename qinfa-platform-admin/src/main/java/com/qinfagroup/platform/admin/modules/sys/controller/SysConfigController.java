@@ -17,12 +17,11 @@ import java.util.Map;
 
 /**
  * 系统配置信息
- *
- *
  */
 @RestController
 @RequestMapping("/sys/config")
 public class SysConfigController extends AbstractController {
+
 	@Autowired
 	private SysConfigService sysConfigService;
 	

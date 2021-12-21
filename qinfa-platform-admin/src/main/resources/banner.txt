@@ -1,4 +1,4 @@
-${AnsiColor.BRIGHT_YELLOW}${AnsiStyle.BOLD}
+${AnsiColor.CYAN}${AnsiStyle.BOLD}
  +-+-+-+-+-+ +-+-+-+-+-+
  |C|h|i|n|a| |Q|i|n|f|a|
  +-+-+-+-+-+ +-+-+-+-+-+
