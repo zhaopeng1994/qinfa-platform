@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qinfagroup.platform.mine.base.dao.RawCoalTypeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.qinfagroup.platform.mine.base.entity.RawCoalTypeEntity" id="rawCoalTypeMap">
+        <result property="name" column="name"/>
+        <result property="alias" column="alias"/>
+        <result property="basis" column="basis"/>
+        <result property="isDeleted" column="is_deleted"/>
+    </resultMap>
+
+
+</mapper>

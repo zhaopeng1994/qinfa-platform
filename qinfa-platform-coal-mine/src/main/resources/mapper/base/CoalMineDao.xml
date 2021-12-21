@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qinfagroup.platform.mine.base.dao.CoalMineDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.qinfagroup.platform.mine.base.entity.CoalMineEntity" id="coalMineMap">
+        <result property="code" column="code"/>
+        <result property="name" column="name"/>
+        <result property="area" column="area"/>
+        <result property="type" column="type"/>
+        <result property="isEnabled" column="is_enabled"/>
+    </resultMap>
+
+
+</mapper>

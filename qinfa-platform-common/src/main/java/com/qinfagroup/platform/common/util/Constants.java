@@ -5,7 +5,7 @@ package com.qinfagroup.platform.common.util;
 /**
  * 常量
  */
-public class Constant {
+public class Constants {
 
 	/** 超级管理员ID */
 	public static final int SUPER_ADMIN = 1;
@@ -29,4 +29,8 @@ public class Constant {
      *  升序
      */
     public static final String ASC = "asc";
+    /**
+     *  降序
+     */
+    public static final String DESC = "desc";
 }

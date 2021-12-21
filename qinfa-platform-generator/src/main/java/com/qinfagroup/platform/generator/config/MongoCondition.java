@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
- * @author 杜兰特
+ * @author 亚索
  **/
 public class MongoCondition implements Condition {
 

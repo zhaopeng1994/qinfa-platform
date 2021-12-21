@@ -1,4 +1,4 @@
-package com.qinfagroup.platform.common.pojo;
+package com.qinfagroup.platform.common.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 
@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 
 /**
  * 抽象实体类
+ * @author peng.zhao
  */
 public abstract class AbstractEntity {
 

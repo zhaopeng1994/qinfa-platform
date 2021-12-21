@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 8090
 
 # mysql
 spring:
@@ -21,10 +21,10 @@ spring:
     #    username: sa
     #    password: 123456
     #PostgreSQL配置
-  #    driverClassName: org.postgresql.Driver
-  #    url: jdbc:postgresql://192.168.10.10:5432/renren_fast
-  #    username: postgres
-  #    password: 123456
+    #    driverClassName: org.postgresql.Driver
+    #    url: jdbc:postgresql://192.168.10.10:5432/renren_fast
+    #    username: postgres
+    #    password: 123456
 
 
 
@@ -54,6 +54,6 @@ pagehelper:
 
 
 #指定数据库，可选值有【mysql、oracle、sqlserver、postgresql、mongodb】
-renren:
+default:
   database: mysql
 

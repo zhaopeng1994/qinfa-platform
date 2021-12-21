@@ -1,4 +1,4 @@
-package com.qinfagroup.platform.common.util;
+package com.qinfagroup.platform.common.restful;
 
 import org.apache.http.HttpStatus;
 
@@ -7,7 +7,9 @@ import java.util.Map;
 
 /**
  * Rest请求通用返回工具类
+ * @date 2021-12-21 过期，推荐使用 com.qinfagroup.platform.common.restful.ResponseData
  */
+@Deprecated
 public class R extends HashMap<String, Object> {
     private static final long serialVersionUID = 1L;
 

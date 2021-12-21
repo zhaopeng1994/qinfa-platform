@@ -2,24 +2,25 @@
 
 package com.qinfagroup.platform.common.xss;
 
-import com.qinfagroup.platform.common.util.RRException;
+import com.qinfagroup.platform.common.exception.ServiceException;
+import com.qinfagroup.platform.common.restful.ResponseCode;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * SQL过滤
- *
- *
+ * SQL过滤器
  */
 public class SQLFilter {
 
     /**
      * SQL注入过滤
-     * @param str  待验证的字符串
+     * @param str 待验证的字符串
      */
-    public static String sqlInject(String str){
+    public static String sqlInject(String str) {
+
         if(StringUtils.isBlank(str)){
             return null;
         }
+
         //去掉'|"|;|\字符
         str = StringUtils.replace(str, "'", "");
         str = StringUtils.replace(str, "\"", "");
@@ -33,9 +34,9 @@ public class SQLFilter {
         String[] keywords = {"master", "truncate", "insert", "select", "delete", "update", "declare", "alter", "drop"};
 
         //判断是否包含非法字符
-        for(String keyword : keywords){
-            if(str.indexOf(keyword) != -1){
-                throw new RRException("包含非法字符");
+        for (String keyword : keywords){
+            if (str.contains(keyword)){
+                throw new ServiceException(ResponseCode.RC400.getCode(), "请求参数中存在非法字符");
             }
         }
 

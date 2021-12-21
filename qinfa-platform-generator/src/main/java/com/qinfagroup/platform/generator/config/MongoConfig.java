@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author 杜兰特
+ * @author 亚索
  **/
 @Component
 @ConfigurationProperties(prefix = "mongodb")

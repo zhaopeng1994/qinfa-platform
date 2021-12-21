@@ -50,7 +50,7 @@ public class ScheduleJobServiceImpl extends ServiceImpl<ScheduleJobDao, Schedule
 
 		IPage<ScheduleJobEntity> page = this.page(
 			new Query<ScheduleJobEntity>().getPage(params),
-			new QueryWrapper <ScheduleJobEntity>().like(StringUtils.isNotBlank(beanName),"bean_name", beanName)
+			new QueryWrapper<ScheduleJobEntity>().like(StringUtils.isNotBlank(beanName),"bean_name", beanName)
 		);
 
 		return new PageUtils(page);

@@ -1,10 +1,4 @@
-/**
- * Copyright (c) 2018 人人开源 All rights reserved.
- * <p>
- * https://www.renren.io
- * <p>
- * 版权所有，侵权必究！
- */
+
 
 package com.qinfagroup.platform.generator.config;
 
@@ -20,18 +14,23 @@ import org.springframework.context.annotation.Primary;
 /**
  * 数据库配置
  *
- * @author 杜兰特
+ * @author 亚索
  */
 @Configuration
 public class DbConfig {
-    @Value("${renren.database: mysql}")
+    
+    @Value("${default.database:mysql}")
     private String database;
+    
     @Autowired
     private MySQLGeneratorDao mySQLGeneratorDao;
+    
     @Autowired
     private OracleGeneratorDao oracleGeneratorDao;
+    
     @Autowired
     private SQLServerGeneratorDao sqlServerGeneratorDao;
+    
     @Autowired
     private PostgreSQLGeneratorDao postgreSQLGeneratorDao;
 

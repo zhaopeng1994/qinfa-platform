@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * 代码生成器
  * 
- * @author 杜兰特
+ * @author 亚索
  */
 @Controller
 @RequestMapping("/sys/generator")

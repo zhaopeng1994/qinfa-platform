@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * Oracle代码生成器
  *
- * @author 杜兰特
+ * @author 亚索
  * @since 2018-07-24
  */
 @Mapper
