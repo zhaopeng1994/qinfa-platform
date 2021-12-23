@@ -1,15 +1,17 @@
 package com.qinfagroup.platform.mine.base.entity;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import com.qinfagroup.platform.common.entity.AbstractEntity;
-import java.io.Serializable;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
  * 煤矿表 - 抽象实体
+ * @author peng.zhao
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("base_coal_mine")
 public class CoalMineEntity extends AbstractEntity implements Serializable {
@@ -18,7 +20,6 @@ public class CoalMineEntity extends AbstractEntity implements Serializable {
 	/**
 	 * 煤矿编号
 	 */
-	@TableId
 	private String code;
 	/**
 	 * 煤矿名称

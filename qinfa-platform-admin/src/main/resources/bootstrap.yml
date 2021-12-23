@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: qinfa-platform-admin

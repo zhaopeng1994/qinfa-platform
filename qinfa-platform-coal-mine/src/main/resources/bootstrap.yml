@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: qinfa-platform-coal-mine
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 957dda96-b951-4c21-8dc5-c0c8b63d5b44

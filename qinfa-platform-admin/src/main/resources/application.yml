@@ -11,6 +11,8 @@ server:
     context-path: /qinfa-platform-admin
 
 spring:
+  application:
+    name: qinfa-platform-admin
   # 环境 dev|test|prod
   profiles:
     active: dev

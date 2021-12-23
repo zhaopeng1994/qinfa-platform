@@ -19,9 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.lang.reflect.Field;
-import java.lang.reflect.Type;
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -121,6 +119,11 @@ public class GenUtils {
             String attrType = config.getString(columnEntity.getDataType(), columnToJava(columnEntity.getDataType()));
             columnEntity.setAttrType(attrType);
 
+            //是否主键
+            if ("PRI".equalsIgnoreCase(column.get("columnKey")) && tableEntity.getPk() == null) {
+                tableEntity.setPk(columnEntity);
+            }
+
             if (hasEntitySuperClass) {
                 Map<String, String> superClassFields = getSuperClassFields(entitySuperClass);
                 if (superClassFields.containsKey(columnEntity.getAttrname()) && superClassFields.get(columnEntity.getAttrname()).endsWith(attrType)) {
@@ -128,21 +131,17 @@ public class GenUtils {
                 }
             }
 
-            if (!hasBigDecimal && attrType.equals("BigDecimal")) {
+            if (!hasBigDecimal && "BigDecimal".equals(attrType)) {
                 hasBigDecimal = true;
             }
-            if (!hasLocalDateTime && attrType.equals("LocalDateTime")) {
+            if (!hasLocalDateTime && "LocalDateTime".equals(attrType)) {
                 hasLocalDateTime = true;
             }
-            if (!hasLocalDate && attrType.equals("LocalDate")) {
+            if (!hasLocalDate && "LocalDate".equals(attrType)) {
                 hasLocalDate = true;
             }
             if (!hasList && "array".equals(columnEntity.getExtra())) {
                 hasList = true;
-            }
-            //是否主键
-            if ("PRI".equalsIgnoreCase(column.get("columnKey")) && tableEntity.getPk() == null) {
-                tableEntity.setPk(columnEntity);
             }
 
             columsList.add(columnEntity);
