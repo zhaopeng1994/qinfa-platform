@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 import com.qinfagroup.platform.admin.common.exception.RRException;
@@ -10,7 +8,6 @@ import org.apache.shiro.subject.Subject;
 
 /**
  * Shiro工具类
- *
  *
  */
 public class ShiroUtils {

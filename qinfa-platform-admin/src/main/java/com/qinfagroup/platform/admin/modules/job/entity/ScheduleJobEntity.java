@@ -14,7 +14,6 @@ import java.util.Date;
 /**
  * 定时任务
  *
- *
  */
 @Data
 @TableName("schedule_job")

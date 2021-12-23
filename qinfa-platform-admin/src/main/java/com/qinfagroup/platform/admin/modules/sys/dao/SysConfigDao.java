@@ -11,7 +11,6 @@ import org.apache.ibatis.annotations.Param;
 /**
  * 系统配置信息
  *
- *
  */
 @Mapper
 public interface SysConfigDao extends BaseMapper<SysConfigEntity> {

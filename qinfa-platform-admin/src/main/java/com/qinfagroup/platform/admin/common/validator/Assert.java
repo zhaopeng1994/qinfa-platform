@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.validator;
 
 import com.qinfagroup.platform.admin.common.exception.RRException;
@@ -7,7 +5,6 @@ import org.apache.commons.lang.StringUtils;
 
 /**
  * 数据校验
- *
  *
  */
 public abstract class Assert {

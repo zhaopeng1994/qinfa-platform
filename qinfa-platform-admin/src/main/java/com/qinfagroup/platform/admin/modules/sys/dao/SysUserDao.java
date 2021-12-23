@@ -11,7 +11,6 @@ import java.util.List;
 /**
  * 系统用户
  *
- *
  */
 @Mapper
 public interface SysUserDao extends BaseMapper<SysUserEntity> {

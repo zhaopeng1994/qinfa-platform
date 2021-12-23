@@ -8,7 +8,6 @@ import org.apache.commons.lang.StringUtils;
 /**
  * SQL过滤
  *
- *
  */
 public class SQLFilter {
 

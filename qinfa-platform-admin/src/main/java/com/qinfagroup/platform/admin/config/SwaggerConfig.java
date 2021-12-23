@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.config;
 
 import io.swagger.annotations.ApiOperation;
@@ -39,10 +37,10 @@ public class SwaggerConfig implements WebMvcConfigurer {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("人人开源")
-            .description("renren-fast文档")
-            .termsOfServiceUrl("https://www.renren.io")
-            .version("3.0.0")
+            .title("秦发产运销大数据平台")
+            .description("API文档")
+            .termsOfServiceUrl("")
+            .version("1.0.0")
             .build();
     }
 

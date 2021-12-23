@@ -10,7 +10,6 @@ import org.hibernate.validator.constraints.NotBlank;
 /**
  * 注册表单
  *
- *
  */
 @Data
 @ApiModel(value = "注册表单")

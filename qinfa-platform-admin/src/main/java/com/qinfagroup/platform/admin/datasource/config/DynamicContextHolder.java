@@ -1,11 +1,3 @@
-/**
- * Copyright (c) 2018 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
-
 package com.qinfagroup.platform.admin.datasource.config;
 
 import java.util.ArrayDeque;
@@ -13,7 +5,6 @@ import java.util.Deque;
 
 /**
  * 多数据源上下文
- *
  *
  */
 public class DynamicContextHolder {

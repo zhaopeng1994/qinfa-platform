@@ -9,7 +9,6 @@ import java.io.IOException;
 /**
  * XSS过滤
  *
- *
  */
 public class XssFilter implements Filter {
 

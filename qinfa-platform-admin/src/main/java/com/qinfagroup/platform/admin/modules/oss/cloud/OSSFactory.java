@@ -11,7 +11,6 @@ import com.qinfagroup.platform.admin.modules.sys.service.SysConfigService;
 /**
  * 文件上传Factory
  *
- *
  */
 public final class OSSFactory {
     private static SysConfigService sysConfigService;

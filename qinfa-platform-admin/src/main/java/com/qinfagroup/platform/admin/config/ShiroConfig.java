@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.config;
 
 import com.qinfagroup.platform.admin.modules.sys.oauth2.OAuth2Filter;
@@ -19,7 +17,6 @@ import java.util.Map;
 
 /**
  * Shiro配置
- *
  *
  */
 @Configuration

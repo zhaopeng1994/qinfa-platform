@@ -9,7 +9,6 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * 系统用户Token
  *
- *
  */
 @Mapper
 public interface SysUserTokenDao extends BaseMapper<SysUserTokenEntity> {

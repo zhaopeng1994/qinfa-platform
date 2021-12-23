@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * Redis配置
- *
  *
  */
 @Configuration

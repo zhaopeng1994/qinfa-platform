@@ -20,7 +20,6 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 权限(Token)验证
  *
- *
  */
 @Component
 public class AuthorizationInterceptor extends HandlerInterceptorAdapter {

@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.config;
 
 import org.springframework.context.annotation.Configuration;

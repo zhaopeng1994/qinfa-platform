@@ -1,10 +1,7 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 /**
  * 常量
- *
  *
  */
 public class Constant {

@@ -14,7 +14,6 @@ import java.util.List;
 /**
  * 菜单管理
  *
- *
  */
 @Data
 @TableName("sys_menu")

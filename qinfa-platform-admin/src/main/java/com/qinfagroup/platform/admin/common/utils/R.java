@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 import org.apache.http.HttpStatus;
@@ -8,9 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 返回数据
- *
- *
+ * Restful接口返回数据封装类
  */
 public class R extends HashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
@@ -51,6 +47,7 @@ public class R extends HashMap<String, Object> {
 		return new R();
 	}
 
+	@Override
 	public R put(String key, Object value) {
 		super.put(key, value);
 		return this;

@@ -10,8 +10,6 @@ import java.lang.annotation.Target;
 
 /**
  * 系统日志注解
- *
- *
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

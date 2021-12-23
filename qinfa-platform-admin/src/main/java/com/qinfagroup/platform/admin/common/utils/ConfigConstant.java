@@ -1,10 +1,7 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 /**
  * 系统参数相关Key
- *
  *
  */
 public class ConfigConstant {

@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 import java.util.HashMap;
@@ -7,7 +5,6 @@ import java.util.HashMap;
 
 /**
  * Map工具类
- *
  *
  */
 public class MapUtils extends HashMap<String, Object> {

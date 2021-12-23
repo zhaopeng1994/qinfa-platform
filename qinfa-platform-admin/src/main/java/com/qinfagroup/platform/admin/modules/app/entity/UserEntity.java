@@ -13,7 +13,6 @@ import java.util.Date;
 /**
  * 用户
  *
- *
  */
 @Data
 @TableName("tb_user")

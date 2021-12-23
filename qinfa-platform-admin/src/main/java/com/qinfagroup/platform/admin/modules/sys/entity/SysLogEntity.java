@@ -13,7 +13,6 @@ import java.util.Date;
 /**
  * 系统日志
  *
- *
  */
 @Data
 @TableName("sys_log")

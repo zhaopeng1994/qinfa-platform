@@ -21,7 +21,6 @@ import java.io.IOException;
 /**
  * oauth2过滤器
  *
- *
  */
 public class OAuth2Filter extends AuthenticatingFilter {
 

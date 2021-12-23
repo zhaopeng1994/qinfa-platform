@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -12,7 +10,6 @@ import java.util.Map;
 
 /**
  * 查询参数
- *
  *
  */
 public class Query<T> {

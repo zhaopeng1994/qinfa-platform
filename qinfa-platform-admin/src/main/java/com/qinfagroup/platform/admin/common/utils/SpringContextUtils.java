@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 import org.springframework.beans.BeansException;
@@ -9,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 /**
  * Spring Context 工具类
- *
  *
  */
 @Component

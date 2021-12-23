@@ -22,7 +22,6 @@ import java.util.Date;
 /**
  * 注册
  *
- *
  */
 @RestController
 @RequestMapping("/app")

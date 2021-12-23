@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -9,7 +7,6 @@ import java.util.List;
 
 /**
  * 分页工具类
- *
  *
  */
 public class PageUtils implements Serializable {

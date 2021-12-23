@@ -10,7 +10,6 @@ import java.util.Set;
 /**
  * shiro相关接口
  *
- *
  */
 public interface ShiroService {
     /**

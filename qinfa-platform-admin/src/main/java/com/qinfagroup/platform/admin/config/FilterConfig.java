@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.config;
 
 import com.qinfagroup.platform.admin.common.xss.XssFilter;
@@ -12,7 +10,6 @@ import javax.servlet.DispatcherType;
 
 /**
  * Filter配置
- *
  *
  */
 @Configuration

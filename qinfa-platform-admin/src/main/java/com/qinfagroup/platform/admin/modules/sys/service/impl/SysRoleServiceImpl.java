@@ -28,7 +28,6 @@ import java.util.Map;
 /**
  * 角色
  *
- *
  */
 @Service("sysRoleService")
 public class SysRoleServiceImpl extends ServiceImpl<SysRoleDao, SysRoleEntity> implements SysRoleService {

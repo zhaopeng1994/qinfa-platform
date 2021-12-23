@@ -1,11 +1,3 @@
-/**
- * Copyright (c) 2018 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
-
 package com.qinfagroup.platform.admin.datasource.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
@@ -22,7 +14,6 @@ import java.util.Map;
 
 /**
  * 配置多数据源
- *
  *
  */
 @Configuration

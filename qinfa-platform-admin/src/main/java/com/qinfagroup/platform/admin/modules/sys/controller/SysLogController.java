@@ -19,7 +19,6 @@ import java.util.Map;
 /**
  * 系统日志
  *
- *
  */
 @Controller
 @RequestMapping("/sys/log")

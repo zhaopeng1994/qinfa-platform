@@ -7,7 +7,6 @@ import lombok.Data;
 /**
  * 登录表单
  *
- *
  */
 @Data
 public class SysLoginForm {

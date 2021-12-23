@@ -12,7 +12,6 @@ import java.util.Properties;
 /**
  * 定时任务配置
  *
- *
  */
 @Configuration
 public class ScheduleConfig {

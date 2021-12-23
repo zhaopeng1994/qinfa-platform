@@ -1,10 +1,7 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 /**
  * Redis所有Keys
- *
  *
  */
 public class RedisKeys {

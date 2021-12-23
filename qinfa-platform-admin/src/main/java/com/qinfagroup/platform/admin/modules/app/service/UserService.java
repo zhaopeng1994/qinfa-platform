@@ -10,7 +10,6 @@ import com.qinfagroup.platform.admin.modules.app.form.LoginForm;
 /**
  * 用户
  *
- *
  */
 public interface UserService extends IService<UserEntity> {
 

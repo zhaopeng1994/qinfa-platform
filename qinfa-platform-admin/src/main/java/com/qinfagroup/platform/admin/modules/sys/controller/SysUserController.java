@@ -26,7 +26,6 @@ import java.util.Map;
 /**
  * 系统用户
  *
- *
  */
 @RestController
 @RequestMapping("/sys/user")

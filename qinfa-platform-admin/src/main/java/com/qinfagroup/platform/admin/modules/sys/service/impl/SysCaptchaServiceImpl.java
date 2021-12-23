@@ -21,7 +21,6 @@ import java.util.Date;
 /**
  * 验证码
  *
- *
  */
 @Service("sysCaptchaService")
 public class SysCaptchaServiceImpl extends ServiceImpl<SysCaptchaDao, SysCaptchaEntity> implements SysCaptchaService {

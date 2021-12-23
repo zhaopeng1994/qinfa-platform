@@ -11,7 +11,6 @@ import java.io.Serializable;
 /**
  * 角色与菜单对应关系
  *
- *
  */
 @Data
 @TableName("sys_role_menu")

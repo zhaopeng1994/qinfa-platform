@@ -18,7 +18,6 @@ import java.util.List;
 /**
  * 系统用户
  *
- *
  */
 @Data
 @TableName("sys_user")

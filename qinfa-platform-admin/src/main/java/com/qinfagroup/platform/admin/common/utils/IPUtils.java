@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 import com.alibaba.druid.util.StringUtils;
@@ -9,12 +7,10 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * IP地址
- *
- *
+ * IP地址工具类
  */
 public class IPUtils {
-	private static Logger logger = LoggerFactory.getLogger(IPUtils.class);
+	private static final Logger logger = LoggerFactory.getLogger(IPUtils.class);
 
 	/**
 	 * 获取IP地址

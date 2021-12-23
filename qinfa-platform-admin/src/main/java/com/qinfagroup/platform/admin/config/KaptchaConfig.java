@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.config;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
@@ -12,7 +10,6 @@ import java.util.Properties;
 
 /**
  * 生成验证码配置
- *
  *
  */
 @Configuration

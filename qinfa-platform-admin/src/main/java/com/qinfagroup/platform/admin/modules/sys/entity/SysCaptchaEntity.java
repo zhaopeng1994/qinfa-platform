@@ -12,7 +12,6 @@ import java.util.Date;
 /**
  * 系统验证码
  *
- *
  */
 @Data
 @TableName("sys_captcha")

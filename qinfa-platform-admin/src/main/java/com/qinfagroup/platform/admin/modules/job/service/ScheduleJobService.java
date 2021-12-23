@@ -11,7 +11,6 @@ import java.util.Map;
 /**
  * 定时任务
  *
- *
  */
 public interface ScheduleJobService extends IService<ScheduleJobEntity> {
 

@@ -13,7 +13,6 @@ import java.util.Map;
 /**
  * 系统用户
  *
- *
  */
 public interface SysUserService extends IService<SysUserEntity> {
 

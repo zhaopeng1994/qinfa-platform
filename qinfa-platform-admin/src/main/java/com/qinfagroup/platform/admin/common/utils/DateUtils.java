@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 import org.apache.commons.lang.StringUtils;
@@ -13,8 +11,6 @@ import java.util.Date;
 
 /**
  * 日期处理
- *
- *
  */
 public class DateUtils {
 	/** 时间格式(yyyy-MM-dd) */

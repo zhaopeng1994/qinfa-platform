@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.exception;
 
 import com.qinfagroup.platform.admin.common.utils.R;
@@ -13,8 +11,6 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 /**
  * 异常处理器
- *
- *
  */
 @RestControllerAdvice
 public class RRExceptionHandler {

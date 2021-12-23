@@ -7,7 +7,6 @@ import lombok.Data;
 /**
  * 密码表单
  *
- *
  */
 @Data
 public class PasswordForm {

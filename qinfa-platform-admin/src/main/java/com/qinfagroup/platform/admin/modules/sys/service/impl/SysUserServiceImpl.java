@@ -30,7 +30,6 @@ import java.util.Map;
 /**
  * 系统用户
  *
- *
  */
 @Service("sysUserService")
 public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> implements SysUserService {

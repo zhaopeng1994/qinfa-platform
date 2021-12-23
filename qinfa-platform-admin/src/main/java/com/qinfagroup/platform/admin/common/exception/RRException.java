@@ -1,10 +1,7 @@
-
-
 package com.qinfagroup.platform.admin.common.exception;
 
 /**
  * 自定义异常
- *
  *
  */
 public class RRException extends RuntimeException {

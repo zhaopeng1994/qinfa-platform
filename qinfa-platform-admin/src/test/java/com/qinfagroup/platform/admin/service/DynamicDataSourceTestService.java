@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * 测试多数据源
  *
- *
  */
 @Service
 //@DataSource("slave1")

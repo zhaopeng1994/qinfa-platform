@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.admin.common.utils;
 
 import org.springframework.web.context.request.RequestContextHolder;
