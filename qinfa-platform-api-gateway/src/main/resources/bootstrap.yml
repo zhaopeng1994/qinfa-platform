@@ -1,6 +1,8 @@
 spring:
+  application:
+    name: qinfa-platform-api-gateway
   cloud:
     nacos:
       config:
         server-addr: 127.0.0.1:8848
-        namespace: a9b1587a-8b34-4fd8-a0e4-f48e70488369
+        namespace: 9275b822-df2b-49c2-958e-c2a0c12c57b5

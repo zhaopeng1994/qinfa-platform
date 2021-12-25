@@ -9,13 +9,6 @@
 	<name>秦发产运销大数据平台-管理服务</name>
 	<description>qinfa-platform-admin</description>
 
-	<!--<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.4.RELEASE</version>
-		<relativePath/>
-	</parent>-->
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -46,6 +39,8 @@
 		<qinfa-platform.version>1.0.0</qinfa-platform.version>
 		<validation-api.version>1.1.0.Final</validation-api.version>
 		<hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
+		<springboot.version>2.3.12.RELEASE</springboot.version>
+		<spring.cloud.alibaba.version>2.2.7.RELEASE</spring.cloud.alibaba.version>
 	</properties>
 
 	<dependencies>
@@ -249,10 +244,19 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- springboot 依赖 -->
 			<dependency>
-				<groupId>com.qinfagroup</groupId>
-				<artifactId>qinfa-platform</artifactId>
-				<version>${qinfa-platform.version}</version>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${springboot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- spring cloud alibaba 依赖 -->
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring.cloud.alibaba.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
