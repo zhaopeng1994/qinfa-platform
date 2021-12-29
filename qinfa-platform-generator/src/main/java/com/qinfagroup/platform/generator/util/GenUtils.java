@@ -1,6 +1,5 @@
-package com.qinfagroup.platform.generator.utils;
+package com.qinfagroup.platform.generator.util;
 
-import com.qinfagroup.platform.generator.config.MongoManager;
 import com.qinfagroup.platform.generator.entity.ColumnEntity;
 import com.qinfagroup.platform.generator.entity.TableEntity;
 import com.qinfagroup.platform.generator.entity.mongo.MongoDefinition;
@@ -24,7 +23,8 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
- * 代码生成器   工具类
+ * 代码生成工具类
+ * @author peng.zhao
  */
 public class GenUtils {
 
@@ -44,13 +44,13 @@ public class GenUtils {
 
         templates.add("template/index.vue.vm");
         templates.add("template/add-or-update.vue.vm");
-        if (MongoManager.isMongo()) {
-            // mongo不需要mapper、sql   实体类需要替换
-            templates.remove(0);
-            templates.remove(1);
-            templates.remove(2);
-            templates.add("template/MongoEntity.java.vm");
-        }
+//        if (MongoManager.isMongo()) {
+//            // mongo不需要mapper、sql   实体类需要替换
+//            templates.remove(0);
+//            templates.remove(1);
+//            templates.remove(2);
+//            templates.add("template/MongoEntity.java.vm");
+//        }
         return templates;
     }
 
@@ -200,7 +200,7 @@ public class GenUtils {
                 IOUtils.closeQuietly(sw);
                 zip.closeEntry();
             } catch (IOException e) {
-                throw new RRException("渲染模板失败，表名：" + tableEntity.getTableName(), e);
+                throw new RuntimeException("渲染模板失败，表名：" + tableEntity.getTableName(), e);
             }
         }
     }
@@ -208,17 +208,17 @@ public class GenUtils {
     /**
      * 生成mongo其他实体类的代码
      */
-    public static void generatorMongoCode(String[] tableNames, ZipOutputStream zip) {
-        for (String tableName : tableNames) {
-            MongoDefinition info = MongoManager.getInfo(tableName);
-            currentTableName = tableName;
-            List<MongoGeneratorEntity> childrenInfo = info.getChildrenInfo(tableName);
-            childrenInfo.remove(0);
-            for (MongoGeneratorEntity mongoGeneratorEntity : childrenInfo) {
-                generatorChildrenBeanCode(mongoGeneratorEntity, zip);
-            }
-        }
-    }
+//    public static void generatorMongoCode(String[] tableNames, ZipOutputStream zip) {
+//        for (String tableName : tableNames) {
+//            MongoDefinition info = MongoManager.getInfo(tableName);
+//            currentTableName = tableName;
+//            List<MongoGeneratorEntity> childrenInfo = info.getChildrenInfo(tableName);
+//            childrenInfo.remove(0);
+//            for (MongoGeneratorEntity mongoGeneratorEntity : childrenInfo) {
+//                generatorChildrenBeanCode(mongoGeneratorEntity, zip);
+//            }
+//        }
+//    }
 
     private static void generatorChildrenBeanCode(MongoGeneratorEntity mongoGeneratorEntity, ZipOutputStream zip) {
         //配置信息
@@ -296,7 +296,7 @@ public class GenUtils {
                 IOUtils.closeQuietly(sw);
                 zip.closeEntry();
             } catch (IOException e) {
-                throw new RRException("渲染模板失败，表名：" + tableEntity.getTableName(), e);
+                throw new RuntimeException("渲染模板失败，表名：" + tableEntity.getTableName(), e);
             }
         }
 
@@ -330,7 +330,7 @@ public class GenUtils {
         try {
             return new PropertiesConfiguration("generator.properties");
         } catch (ConfigurationException e) {
-            throw new RRException("获取配置文件失败，", e);
+            throw new RuntimeException("获取配置文件失败，", e);
         }
     }
 

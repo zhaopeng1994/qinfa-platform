@@ -4,13 +4,10 @@ package com.qinfagroup.platform.generator.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.qinfagroup.platform.generator.config.MongoManager;
-import com.qinfagroup.platform.generator.utils.Query;
+import com.qinfagroup.platform.generator.util.Query;
 import com.qinfagroup.platform.generator.dao.GeneratorDao;
-import com.qinfagroup.platform.generator.dao.MongoDBGeneratorDao;
-import com.qinfagroup.platform.generator.factory.MongoDBCollectionFactory;
-import com.qinfagroup.platform.generator.utils.GenUtils;
-import com.qinfagroup.platform.generator.utils.PageUtils;
+import com.qinfagroup.platform.generator.util.GenUtils;
+import com.qinfagroup.platform.generator.util.PageUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,23 +18,25 @@ import java.util.Map;
 import java.util.zip.ZipOutputStream;
 
 /**
- * 代码生成器
- *
- * @author 亚索
+ * 代码生成服务类
+ * @author peng.zhao
  */
 @Service
 public class SysGeneratorService {
+
     @Autowired
     private GeneratorDao generatorDao;
 
-
+    /**
+     * 分页查询所有数据表
+     */
     public PageUtils queryList(Query query) {
         Page<?> page = PageHelper.startPage(query.getPage(), query.getLimit());
         List<Map<String, Object>> list = generatorDao.queryList(query);
         int total = (int) page.getTotal();
-        if (generatorDao instanceof MongoDBGeneratorDao) {
-            total = MongoDBCollectionFactory.getCollectionTotal(query);
-        }
+//        if (generatorDao instanceof MongoDBGeneratorDao) {
+//            total = MongoDBCollectionFactory.getCollectionTotal(query);
+//        }
         return new PageUtils(list, total, query.getLimit(), query.getPage());
     }
 
@@ -61,11 +60,9 @@ public class SysGeneratorService {
             //生成代码
             GenUtils.generatorCode(table, columns, zip);
         }
-        if (MongoManager.isMongo()) {
-            GenUtils.generatorMongoCode(tableNames, zip);
-        }
-
-
+//        if (MongoManager.isMongo()) {
+//            GenUtils.generatorMongoCode(tableNames, zip);
+//        }
         IOUtils.closeQuietly(zip);
         return outputStream.toByteArray();
     }

@@ -30,13 +30,12 @@ public class RestfulExceptionHandler {
         return ResponseData.failure(ResponseCode.RC500.getCode(), e.getMessage());
     }
 
+    @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseData<Map<String, String>> handleValidArguments(MethodArgumentNotValidException e) {
         log.error("参数校验异常信息：{}, 异常类型：{}", e.getMessage(), e.getClass());
         BindingResult bindingResult = e.getBindingResult();
         Map<String, String> error = new HashMap<>();
-        bindingResult.getFieldErrors().forEach(item -> {
-            error.put(item.getField(), item.getDefaultMessage());
-        });
+        bindingResult.getFieldErrors().forEach(item -> error.put(item.getField(), item.getDefaultMessage()));
         ResponseData<Map<String, String>> responseData = ResponseData.failure(ResponseCode.RC400.getCode(), ResponseCode.RC400.getMessage());
         responseData.setData(error);
         return responseData;
@@ -46,7 +45,7 @@ public class RestfulExceptionHandler {
      * 业务异常处理方法
      */
     @ExceptionHandler(ServiceException.class)
-    public ResponseData<Void> serviceExceptionHandle(ServiceException e) {
+    public ResponseData<Void> handleServiceException(ServiceException e) {
         log.error("业务异常信息 ex={}", e.getMessage(), e);
         return ResponseData.failure(e.getCode(), e.getMessage());
     }

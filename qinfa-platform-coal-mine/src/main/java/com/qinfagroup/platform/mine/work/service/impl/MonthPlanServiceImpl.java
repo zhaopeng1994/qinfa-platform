@@ -19,8 +19,8 @@ public class MonthPlanServiceImpl extends ServiceImpl<MonthPlanDao, MonthPlanEnt
     @Override
     public PageData<MonthPlanEntity> queryPage(Map<String, Object> params) {
         IPage<MonthPlanEntity> page = this.page(
-            new Query<MonthPlanEntity>().getPage(params),
-            new QueryWrapper<>()
+                new Query<MonthPlanEntity>().getPage(params),
+                new QueryWrapper<>()
         );
 
         return new PageData<>(page);

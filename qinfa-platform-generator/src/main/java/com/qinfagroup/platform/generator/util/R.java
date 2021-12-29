@@ -1,4 +1,4 @@
-package com.qinfagroup.platform.generator.utils;
+package com.qinfagroup.platform.generator.util;
 
 import java.util.HashMap;
 import java.util.Map;
