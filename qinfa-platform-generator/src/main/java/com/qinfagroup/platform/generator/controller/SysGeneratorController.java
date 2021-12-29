@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.generator.controller;
 
 import com.qinfagroup.platform.generator.service.SysGeneratorService;
@@ -18,13 +16,14 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * 代码生成器
+ * 代码生成器API接口
  * 
- * @author 亚索
+ * @author peng.zhao
  */
 @Controller
 @RequestMapping("/sys/generator")
 public class SysGeneratorController {
+
 	@Autowired
 	private SysGeneratorService sysGeneratorService;
 	
@@ -35,7 +34,6 @@ public class SysGeneratorController {
 	@RequestMapping("/list")
 	public R list(@RequestParam Map<String, Object> params){
 		PageUtils pageUtil = sysGeneratorService.queryList(new Query(params));
-		
 		return R.ok().put("page", pageUtil);
 	}
 	
@@ -45,12 +43,10 @@ public class SysGeneratorController {
 	@RequestMapping("/code")
 	public void code(String tables, HttpServletResponse response) throws IOException{
 		byte[] data = sysGeneratorService.generatorCode(tables.split(","));
-		
-		response.reset();  
+		response.reset();
         response.setHeader("Content-Disposition", "attachment; filename=\"code.zip\"");
         response.addHeader("Content-Length", "" + data.length);  
         response.setContentType("application/octet-stream; charset=UTF-8");  
-  
-        IOUtils.write(data, response.getOutputStream());  
+        IOUtils.write(data, response.getOutputStream());
 	}
 }

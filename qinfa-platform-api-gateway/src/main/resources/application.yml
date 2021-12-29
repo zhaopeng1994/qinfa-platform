@@ -11,7 +11,7 @@ spring:
       discovery:
         locator:
           enabled: true
-#     \u5168\u5C40\u8DE8\u57DF\u914D\u7F6E
+      ## \u5168\u5C40\u8DE8\u57DF\u914D\u7F6E
       globalcors:
         cors-configurations:
           '[/**]':
@@ -30,6 +30,12 @@ spring:
         add-to-simple-url-handler-mapping: true
       ## \u8DEF\u7531\u914D\u7F6E
       routes:
+        - id: qinfa-platform-coal-mine
+          uri: lb://qinfa-platform-coal-mine
+          predicates:
+            - Path=/api/coal-mine/**
+          filters:
+            - RewritePath=/api/coal-mine/(?<segment>/?.*), /qinfa-platform-coal-mine/$\{segment}
         - id: qinfa-platform-admin-route
           uri: lb://qinfa-platform-admin
           predicates:

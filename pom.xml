@@ -10,6 +10,7 @@
     <description>qinfa-platform</description>
 
     <modules>
+        <module>qinfa-platform-common</module>
         <module>qinfa-platform-admin</module>
         <module>qinfa-platform-coal-mine</module>
         <module>qinfa-platform-wash-coal-plant</module>
@@ -18,7 +19,6 @@
         <module>qinfa-platform-station</module>
         <module>qinfa-platform-port</module>
         <module>qinfa-platform-generator</module>
-        <module>qinfa-platform-common</module>
         <module>qinfa-platform-api-gateway</module>
     </modules>
 
