@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * 数据表抽象实体
+ * @author peng.zhao
  */
 public class TableEntity {
 	/**

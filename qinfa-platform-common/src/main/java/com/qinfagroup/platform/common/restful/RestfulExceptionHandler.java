@@ -8,6 +8,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,8 +27,18 @@ public class RestfulExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseData<String> handleException(Exception e) {
-        log.error("全局异常信息 ex={}", e.getMessage(), e);
+        log.error("服务器异常：{}", e.getMessage(), e);
         return ResponseData.failure(ResponseCode.RC500.getCode(), e.getMessage());
+    }
+
+    /**
+     * 全局处理404，生效需更新引用模块的mvc配置
+     */
+    @ExceptionHandler(NoHandlerFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseData<Void> handleNotFound(NoHandlerFoundException e) {
+        log.error("资源接口不存在：{}", e.getMessage(), e);
+        return ResponseData.failure(ResponseCode.RC404.getCode(), ResponseCode.RC404.getMessage());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -46,7 +57,7 @@ public class RestfulExceptionHandler {
      */
     @ExceptionHandler(ServiceException.class)
     public ResponseData<Void> handleServiceException(ServiceException e) {
-        log.error("业务异常信息 ex={}", e.getMessage(), e);
+        log.error("业务异常：{}", e.getMessage(), e);
         return ResponseData.failure(e.getCode(), e.getMessage());
     }
 

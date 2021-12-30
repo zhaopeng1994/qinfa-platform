@@ -1,12 +1,15 @@
 package com.qinfagroup.platform.generator.controller;
 
 import com.qinfagroup.platform.common.page.PageData;
+import com.qinfagroup.platform.common.page.PagingRequestParam;
 import com.qinfagroup.platform.common.restful.ResponseData;
 import com.qinfagroup.platform.generator.model.DataTablePo;
-import com.qinfagroup.platform.generator.model.DataTableQueryVo;
+import com.qinfagroup.platform.generator.model.DataTableRequestVo;
 import com.qinfagroup.platform.generator.service.DataTableService;
-import com.qinfagroup.platform.generator.util.QueryParam;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
@@ -17,7 +20,6 @@ import javax.validation.Valid;
  * @author peng.zhao
  */
 @RestController
-@RequestMapping("/dataTable")
 public class DataTableController {
 
 	@Resource
@@ -26,26 +28,13 @@ public class DataTableController {
 	/**
 	 * 数据表查询
 	 */
-	@ResponseBody
-	@PostMapping("/list/{page}/{pageSize}")
+	@PostMapping("/dataTables/{page}/{pageSize}")
 	public ResponseData<PageData<DataTablePo>> list(@PathVariable("page") int page,
 													@PathVariable("pageSize") int pageSize,
-													@RequestBody @Valid DataTableQueryVo dataTableQueryVo){
-		QueryParam<DataTableQueryVo> queryParam = new QueryParam<>(page, pageSize, dataTableQueryVo);
-		PageData<DataTablePo> pageData = dataTableService.selectDataTables(queryParam);
+													@RequestBody @Valid DataTableRequestVo dataTableRequestVo){
+		PagingRequestParam<DataTableRequestVo> pagingRequestParam = new PagingRequestParam<>(page, pageSize, dataTableRequestVo);
+		PageData<DataTablePo> pageData = dataTableService.selectDataTables(pagingRequestParam);
 		return ResponseData.success(pageData);
 	}
-	
-//	/**
-//	 * 生成代码
-//	 */
-//	@RequestMapping("/code")
-//	public void code(String tables, HttpServletResponse response) throws IOException{
-//		byte[] data = sysGeneratorService.generatorCode(tables.split(","));
-//		response.reset();
-//        response.setHeader("Content-Disposition", "attachment; filename=\"code.zip\"");
-//        response.addHeader("Content-Length", "" + data.length);
-//        response.setContentType("application/octet-stream; charset=UTF-8");
-//        IOUtils.write(data, response.getOutputStream());
-//	}
+
 }

@@ -1,5 +1,3 @@
-
-
 package com.qinfagroup.platform.common.page;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;

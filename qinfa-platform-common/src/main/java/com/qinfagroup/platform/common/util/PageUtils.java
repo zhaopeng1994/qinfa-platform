@@ -9,7 +9,11 @@ import java.util.List;
 
 /**
  * 分页工具类
+ * 已过期，建议使用 {}
+ * @see com.qinfagroup.platform.common.page.PageData
+ * @author peng.zhao
  */
+@Deprecated
 public class PageUtils implements Serializable {
 	private static final long serialVersionUID = 1L;
 	/**

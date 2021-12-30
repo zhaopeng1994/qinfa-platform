@@ -3,11 +3,10 @@ package com.qinfagroup.platform.generator.service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.qinfagroup.platform.common.page.PageData;
+import com.qinfagroup.platform.common.page.PagingRequestParam;
 import com.qinfagroup.platform.generator.dao.DataTableDao;
 import com.qinfagroup.platform.generator.model.DataTablePo;
-import com.qinfagroup.platform.generator.model.DataTableQueryVo;
-import com.qinfagroup.platform.generator.util.QueryParam;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.qinfagroup.platform.generator.model.DataTableRequestVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,19 +18,21 @@ import java.util.List;
 @Service
 public class DataTableService {
 
-    @Autowired
-    private DataTableDao dataTableDao;
+    private final DataTableDao dataTableDao;
 
+    public DataTableService(DataTableDao dataTableDao) {
+        this.dataTableDao = dataTableDao;
+    }
 
     /**
-     * 分页查询
+     * 数据表分页查询
      */
-    public PageData<DataTablePo> selectDataTables(QueryParam<DataTableQueryVo> queryParam) {
-        Page<?> page = PageHelper.startPage(queryParam.getPage(), queryParam.getPageSize());
-        String schemaName = queryParam.getRequestVo().getSchemaName();
-        String tableName = queryParam.getRequestVo().getTableName();
+    public PageData<DataTablePo> selectDataTables(PagingRequestParam<DataTableRequestVo> pagingRequestParam) {
+        Page<?> page = PageHelper.startPage(pagingRequestParam.getPage(), pagingRequestParam.getPageSize());
+        String schemaName = pagingRequestParam.getRequestVo().getSchemaName();
+        String tableName = pagingRequestParam.getRequestVo().getTableName();
         List<DataTablePo> dataTables = dataTableDao.selectDataTables(schemaName, tableName);
         int total = (int) page.getTotal();
-        return new PageData<>(dataTables, total, page.getPageSize(), queryParam.getPage());
+        return new PageData<>(dataTables, total, pagingRequestParam.getPageSize(), pagingRequestParam.getPage());
     }
 }

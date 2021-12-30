@@ -4,10 +4,8 @@ package com.qinfagroup.platform.generator.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.qinfagroup.platform.generator.util.Query;
 import com.qinfagroup.platform.generator.dao.GeneratorDao;
 import com.qinfagroup.platform.generator.util.GenUtils;
-import com.qinfagroup.platform.generator.util.PageUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,15 +28,15 @@ public class SysGeneratorService {
     /**
      * 分页查询所有数据表
      */
-    public PageUtils queryList(Query query) {
-        Page<?> page = PageHelper.startPage(query.getPage(), query.getLimit());
-        List<Map<String, Object>> list = generatorDao.queryList(query);
-        int total = (int) page.getTotal();
-//        if (generatorDao instanceof MongoDBGeneratorDao) {
-//            total = MongoDBCollectionFactory.getCollectionTotal(query);
-//        }
-        return new PageUtils(list, total, query.getLimit(), query.getPage());
-    }
+//    public PageUtils queryList(Query query) {
+//        Page<?> page = PageHelper.startPage(query.getPage(), query.getLimit());
+//        List<Map<String, Object>> list = generatorDao.queryList(query);
+//        int total = (int) page.getTotal();
+////        if (generatorDao instanceof MongoDBGeneratorDao) {
+////            total = MongoDBCollectionFactory.getCollectionTotal(query);
+////        }
+//        return new PageUtils(list, total, query.getLimit(), query.getPage());
+//    }
 
     public Map<String, String> queryTable(String tableName) {
         return generatorDao.queryTable(tableName);

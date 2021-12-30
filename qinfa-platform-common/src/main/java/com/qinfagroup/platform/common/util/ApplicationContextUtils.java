@@ -1,4 +1,4 @@
-package com.qinfagroup.platform.generator.util;
+package com.qinfagroup.platform.common.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

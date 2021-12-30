@@ -1,5 +1,6 @@
 package com.qinfagroup.platform.common.page;
 
+
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * 分页数据封装类
+ * 分页查询返回数据封装类
  * @author peng.zhao
  */
 @Getter
@@ -33,7 +34,7 @@ public class PageData<T> implements Serializable {
     private int totalPage;
 
     /**
-     * 当前页数
+     * 当前页
      */
     private int currPage;
 

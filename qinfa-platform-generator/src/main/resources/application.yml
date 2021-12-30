@@ -1,6 +1,7 @@
 server:
   port: 8091
-
+  servlet:
+    context-path: /qinfa-platform-generator
 # mysql
 spring:
   datasource:
@@ -10,55 +11,19 @@ spring:
     url: jdbc:mysql://121.33.190.195:48366/qf_coal_mine?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: cli_users
     password: KJDjifdf343A
-    #oracle配置
-    #    driverClassName: oracle.jdbc.OracleDriver
-    #    url: jdbc:oracle:thin:@47.100.206.162:1521:xe
-    #    username: renren
-    #    password: 123456
-    #SQLServer配置
-    #    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    #    url: jdbc:sqlserver://192.168.10.10:1433;DatabaseName=renren_fast
-    #    username: sa
-    #    password: 123456
-    #PostgreSQL配置
-    #    driverClassName: org.postgresql.Driver
-    #    url: jdbc:postgresql://192.168.10.10:5432/renren_fast
-    #    username: postgres
-    #    password: 123456
-  redis:
-    host: 10.70.26.52
-    port: 6379
-    password: bdntestpasswd
-    timeout: 3000
-    database: 1
 
-
-  jackson:
-    time-zone: GMT+8
-    date-format: yyyy-MM-dd HH:mm:ss
   resources:
-    static-locations: classpath:/static/,classpath:/views/
-
-#mongodb:
-#  host: localhost
-#  port: 27017
-#  auth: false #是否使用密码验证
-#  username: tincery
-#  password: renren
-#  source: 123456
-#  database: test
-
+    # 关闭工程中的资源文件建立映射
+    add-mappings: false
+  # 接口处理器不存在即抛异常
+  mvc:
+    throw-exception-if-no-handler-found: true
+# mybatis
 mybatis-plus:
   mapperLocations: classpath:mapper/**/*.xml
-
-
+# 分页
 pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
-
-
-#指定数据库，可选值有【mysql、oracle、sqlserver、postgresql、mongodb】
-default:
-  database: mysql
 

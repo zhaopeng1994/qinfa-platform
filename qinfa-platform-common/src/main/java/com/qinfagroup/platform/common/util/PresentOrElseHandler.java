@@ -2,6 +2,10 @@ package com.qinfagroup.platform.common.util;
 
 import java.util.function.Consumer;
 
+/**
+ * 存在或不存在函数式接口
+ * @author peng.zhao
+ */
 @FunctionalInterface
 public interface PresentOrElseHandler<T> {
 
