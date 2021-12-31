@@ -3,16 +3,15 @@ package com.qinfagroup.platform.generator.controller;
 import com.qinfagroup.platform.common.page.PageData;
 import com.qinfagroup.platform.common.page.PagingRequestParam;
 import com.qinfagroup.platform.common.restful.ResponseData;
+import com.qinfagroup.platform.generator.entity.SchemaEntity;
 import com.qinfagroup.platform.generator.model.DataTablePo;
 import com.qinfagroup.platform.generator.model.DataTableRequestVo;
-import com.qinfagroup.platform.generator.service.DataTableService;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.qinfagroup.platform.generator.service.DatabaseService;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * 数据表API接口
@@ -20,21 +19,33 @@ import javax.validation.Valid;
  * @author peng.zhao
  */
 @RestController
-public class DataTableController {
+@RequestMapping("/database")
+public class DatabaseController {
 
 	@Resource
-	private DataTableService dataTableService;
+	private DatabaseService databaseService;
 
-	/**
-	 * 数据表查询
-	 */
 	@PostMapping("/dataTables/{page}/{pageSize}")
-	public ResponseData<PageData<DataTablePo>> list(@PathVariable("page") int page,
+	public ResponseData<PageData<DataTablePo>> selectDataTables(@PathVariable("page") int page,
 													@PathVariable("pageSize") int pageSize,
 													@RequestBody @Valid DataTableRequestVo dataTableRequestVo){
 		PagingRequestParam<DataTableRequestVo> pagingRequestParam = new PagingRequestParam<>(page, pageSize, dataTableRequestVo);
-		PageData<DataTablePo> pageData = dataTableService.selectDataTables(pagingRequestParam);
+		PageData<DataTablePo> pageData = databaseService.selectDataTables(pagingRequestParam);
 		return ResponseData.success(pageData);
 	}
+
+	@PostMapping("/schema")
+	public ResponseData<Object> insertSchema(@RequestBody @Valid SchemaEntity schemaEntity) {
+
+		return ResponseData.success(null);
+	}
+
+	// TODO 查询Schema列表
+	@GetMapping("/schemas")
+	public ResponseData<List<SchemaEntity>> selectSchemas() {
+		return ResponseData.success(null);
+	}
+
+
 
 }

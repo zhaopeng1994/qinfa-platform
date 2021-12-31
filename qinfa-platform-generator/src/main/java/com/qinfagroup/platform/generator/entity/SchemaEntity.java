@@ -2,11 +2,13 @@ package com.qinfagroup.platform.generator.entity;
 
 import com.qinfagroup.platform.common.entity.AbstractEntity;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  * 数据库Schema信息实体
  * @author peng.zhao
  */
-public class SchemaInfoEntity extends AbstractEntity {
+public class SchemaEntity extends AbstractEntity {
 
     /**
      * IP地址
@@ -21,17 +23,18 @@ public class SchemaInfoEntity extends AbstractEntity {
     /**
      * SchemaName
      */
+    @NotBlank(message = "schema名称不能为空")
     private String name;
 
     /**
-     * 用户名
+     * 说明
      */
-    private String username;
+    private String comments;
 
     /**
-     * 密码
+     * 是否作废
      */
-    private String password;
+    private Integer isDeleted;
 
     public String getIp() {
         return ip;
@@ -57,20 +60,19 @@ public class SchemaInfoEntity extends AbstractEntity {
         this.name = name;
     }
 
-    public String getUsername() {
-        return username;
+    public String getComments() {
+        return comments;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setComments(String comments) {
+        this.comments = comments;
     }
 
-    public String getPassword() {
-        return password;
+    public Integer getIsDeleted() {
+        return isDeleted;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setIsDeleted(Integer isDeleted) {
+        this.isDeleted = isDeleted;
     }
-
 }

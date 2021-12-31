@@ -1,5 +1,6 @@
 package com.qinfagroup.platform.common;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -23,6 +24,12 @@ public class AbstractEntityTest {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void testStringSubstring() {
+        String comments = "生产计划表";
+        System.out.println(StringUtils.endsWith(comments, "表") ? StringUtils.substringBeforeLast(comments,"表") : comments);
     }
 
 }

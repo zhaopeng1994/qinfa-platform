@@ -16,11 +16,11 @@ import java.util.List;
  * @author peng.zhao
  */
 @Service
-public class DataTableService {
+public class DatabaseService {
 
     private final DataTableDao dataTableDao;
 
-    public DataTableService(DataTableDao dataTableDao) {
+    public DatabaseService(DataTableDao dataTableDao) {
         this.dataTableDao = dataTableDao;
     }
 

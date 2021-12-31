@@ -20,6 +20,7 @@
         <module>qinfa-platform-port</module>
         <module>qinfa-platform-generator</module>
         <module>qinfa-platform-api-gateway</module>
+        <module>qinfa-platform-uaa</module>
     </modules>
 
     <properties>

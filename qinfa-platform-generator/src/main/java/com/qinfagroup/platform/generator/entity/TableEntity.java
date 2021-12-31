@@ -23,19 +23,14 @@ public class TableEntity {
 	private ColumnEntity pk;
 
 	/**
-	 * 数据列
-	 */
-	private List<ColumnEntity> columns;
-
-	/**
 	 * 映射类名：如：sys_user => SysUser
 	 */
 	private String className;
 
 	/**
-	 * 映射类名，第一个字母小写，如：sys_user => sysUser
+	 * 映射实例名，如：sys_user => sysUser
 	 */
-	private String classname;
+	private String instanceName;
 	
 	public String getTableName() {
 		return tableName;
@@ -55,22 +50,18 @@ public class TableEntity {
 	public void setPk(ColumnEntity pk) {
 		this.pk = pk;
 	}
-	public List<ColumnEntity> getColumns() {
-		return columns;
-	}
-	public void setColumns(List<ColumnEntity> columns) {
-		this.columns = columns;
-	}
 	public String getClassName() {
 		return className;
 	}
 	public void setClassName(String className) {
 		this.className = className;
 	}
-	public String getClassname() {
-		return classname;
+
+	public String getInstanceName() {
+		return instanceName;
 	}
-	public void setClassname(String classname) {
-		this.classname = classname;
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
 	}
 }

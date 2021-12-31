@@ -9,7 +9,6 @@ public class ColumnEntity {
 	 * 数据列名
 	 */
     private String columnName;
-
 	/**
 	 * 数据类型
 	 */
@@ -19,13 +18,9 @@ public class ColumnEntity {
 	 */
 	private String comments;
 	/**
-	 * 属性映射（第一个字母大写），如：user_name => UserName
+	 * 映射成员属性，如：user_name => userName
 	 */
     private String attrName;
-	/**
-	 * 属性映射（第一个字母小写），如：user_name => userName
-	 */
-	private String attrname;
 	/**
 	 * 属性类型
 	 */
@@ -52,12 +47,6 @@ public class ColumnEntity {
 	}
 	public void setComments(String comments) {
 		this.comments = comments;
-	}
-	public String getAttrname() {
-		return attrname;
-	}
-	public void setAttrname(String attrname) {
-		this.attrname = attrname;
 	}
 	public String getAttrName() {
 		return attrName;

@@ -1,14 +1,10 @@
 package com.qinfagroup.platform.generator.controller;
 
 import com.qinfagroup.platform.common.restful.ResponseData;
-import com.qinfagroup.platform.generator.service.DataTableService;
-import org.apache.commons.io.IOUtils;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.qinfagroup.platform.generator.service.DatabaseService;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -20,12 +16,12 @@ import java.util.List;
 public class CodeController {
 
 	@Resource
-	private DataTableService dataTableService;
+	private DatabaseService databaseService;
 
 	/**
 	 * 获取代码文件
 	 */
-	@RequestMapping("/codeFile/{schemaName}/{tableNames}")
+	@PostMapping("/codeFile/{schemaName}/{tableNames}")
 	public ResponseData<byte[]> code(@PathVariable("schemaName") String schemaName,
 									 @PathVariable(value = "tableNames", required = false) final List<String> tableNames){
 //		byte[] data = dataTableService.getCodeFile(schemaName, tableNames);
